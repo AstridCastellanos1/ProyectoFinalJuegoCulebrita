@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "zrzpmAxZlGZnhKqyrdHBjYm2vH5YW52AsaKwyGuLdEvNuVGcoh5O0K1WyHso7/M0ScFcU4Xv8/rgjEaCHlyZ+Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\astri.DESKTOP-KG4HH30\\OneDrive\\Escritorio\\culebrita\\culebrita\\culebrita.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\astri.DESKTOP-KG4HH30\\.nuget\\packages\\microsoft.dotnet.upgradeassistant.extensions.default.analyzers\\0.3.326103\\microsoft.dotnet.upgradeassistant.extensions.default.analyzers.0.3.326103.nupkg.sha512",
+    "C:\\Users\\astri.DESKTOP-KG4HH30\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\astri.DESKTOP-KG4HH30\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
+    "C:\\Users\\astri.DESKTOP-KG4HH30\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -20,6 +20,7 @@ namespace culebrita
 
         static void Main()
         {
+
             bool continuar;
 
             do
@@ -28,11 +29,12 @@ namespace culebrita
                 var velocidad = 100; //modificar estos valores y ver qué pasa
                 var posiciónComida = Point.Empty;
                 var tamañoPantalla = new Size(60, 20);
-                var culebrita = new Queue<Point>(); //****************************************
+                var culebrita = new ColaLineal();
                 var longitudCulebra = 3; //modificar estos valores y ver qué pasa
                 var posiciónActual = new Point(0, 9); //modificar estos valores y ver qué pasa
-                culebrita.Enqueue(posiciónActual);
+                culebrita.insetar(posiciónActual);
                 var dirección = Direccion.Direction.Derecha; //modificar estos valores y ver qué pasa
+                int c = 0;
 
                 Diseño.DibujaPantalla(tamañoPantalla);
                 Diseño.MuestraPunteo(punteo);
@@ -50,12 +52,12 @@ namespace culebrita
                         longitudCulebra++; //modificar estos valores y ver qué pasa
                         punteo += 10; //modificar estos valores y ver qué pasa
                         Diseño.MuestraPunteo(punteo);
-                        velocidad-=5;
+                        velocidad -= 5;
                     }
 
                     if (posiciónComida == Point.Empty) //entender qué hace esta linea
                     {
-                        posiciónComida = Diseño.MostrarComida(tamañoPantalla, culebrita);
+                        posiciónComida = Diseño.MostrarComida(tamañoPantalla, culebrita, c);//(tamañoPantalla, culebrita)
                     }
                 }
 
@@ -68,7 +70,7 @@ namespace culebrita
 
                 Console.Clear();
                 Console.WriteLine("Nuevo juego? s/n");
-                String texto= Console.ReadLine();
+                String texto = Console.ReadLine();
                 if (texto.Equals("s"))
                 {
                     continuar = true;

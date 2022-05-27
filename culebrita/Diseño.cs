@@ -48,10 +48,8 @@ namespace culebrita
 
 
 
-        internal static Point MostrarComida(Size screenSize, ColaLineal culebra1)//************************************************
+        internal static Point MostrarComida(Size screenSize, ColaLineal culebra1)
         {
-            //ColaLineal culebra = new ColaLineal();
-            //culebra = culebra1;
             var lugarComida = Point.Empty;
             var cabezaCulebra = (Point)culebra1.ultimo();
             var rnd = new Random();
@@ -67,7 +65,7 @@ namespace culebrita
 
             } while (lugarComida == Point.Empty);
 
-            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.BackgroundColor = ConsoleColor.Red;
             Console.SetCursorPosition(lugarComida.X + 1, lugarComida.Y + 1);
             Console.Write(" ");
 

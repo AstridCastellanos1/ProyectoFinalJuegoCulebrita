@@ -7,9 +7,9 @@ namespace culebrita
     class Program
     {
 
-        //convertirlo en un programa orietado a objetos ******
-        //emitir beep cuando coma la comida ******
-        //incrementar la velocidad conforme vaya avanzando***---
+        //convertirlo en un programa orietado a objetos 
+        //emitir beep cuando coma la comida 
+        //incrementar la velocidad conforme vaya avanzando
         //modificar el uso de queue y reemplazarlo con la estructura de cola vista en clase
         //colalinal arreglo
         //cola arraylist
@@ -20,7 +20,7 @@ namespace culebrita
         static void Main()
         {
 
-            bool continuar;
+            String texto;
 
             do
             {
@@ -45,7 +45,7 @@ namespace culebrita
 
                     if (posiciónActual.Equals(posiciónComida))
                     {
-                        Diseño.Sonidos(@"../../../EfectosDeSonido/comer.wav");
+                        Diseño.Sonidos(@"../../../EfectosDeSonido/Comer1.wav");
                         posiciónComida = Point.Empty;
                         longitudCulebra++; //modificar estos valores y ver qué pasa
                         punteo += 10; //modificar estos valores y ver qué pasa
@@ -55,7 +55,7 @@ namespace culebrita
 
                     if (posiciónComida == Point.Empty) //entender qué hace esta linea
                     {
-                        posiciónComida = Diseño.MostrarComida(tamañoPantalla, culebrita);//(tamañoPantalla, culebrita)
+                        posiciónComida = Diseño.MostrarComida(tamañoPantalla, culebrita);
                     }
                 }
 
@@ -66,19 +66,13 @@ namespace culebrita
                 Thread.Sleep(1400);
                 Console.ReadKey();
 
-                Console.Clear();
-                Console.WriteLine("Nuevo juego? s/n");
-                String texto = Console.ReadLine();
-                if (texto.Equals("s"))
-                {
-                    continuar = true;
-                }
-                else
-                {
-                    continuar = false;
-                }
+                Console.Clear(); 
+                Console.WriteLine("\n\n\n\n\n\n\n");
+                Console.Write("                        Nuevo juego? s/n:  ");
+                texto = Console.ReadLine();
+                
 
-            } while (continuar == true);
+            } while (texto.Equals("s"));
 
         }
 

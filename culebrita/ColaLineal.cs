@@ -35,9 +35,7 @@ namespace culebrita
             if (!colaVacia())
             {
                 nFin--;
-
                 return listaCola[frente++];
-
             }
             else
             {
@@ -53,12 +51,6 @@ namespace culebrita
         public int count()
         {
             return nFin;
-        }
-
-        public void borrarCola()
-        {
-            frente = 0;
-            fin = -1;
         }
 
         //Acceso a la cola 

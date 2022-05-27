@@ -61,13 +61,13 @@ namespace culebrita
         }
 
 
-        internal static bool MoverLaCulebrita(ColaLineal culebra1, Point posiciónObjetivo, int longitudCulebra, Size screenSize)//***************************
+        internal static bool MoverLaCulebrita(ColaLineal culebra1, Point posiciónObjetivo, int longitudCulebra, Size screenSize)
         {
             var lastPoint = (Point)culebra1.ultimo();
 
             if (lastPoint.Equals(posiciónObjetivo)) return true;
 
-            if (culebra1.ToString().Any(x => x.Equals(posiciónObjetivo))) return false;//***********************************
+            if (culebra1.ToString().Any(x => x.Equals(posiciónObjetivo))) return false;
 
             if (posiciónObjetivo.X < 0 || posiciónObjetivo.X >= screenSize.Width
                     || posiciónObjetivo.Y < 0 || posiciónObjetivo.Y >= screenSize.Height)
@@ -81,7 +81,7 @@ namespace culebrita
 
             culebra1.insetar(posiciónObjetivo);
 
-            Console.BackgroundColor = ConsoleColor.Red;
+            Console.BackgroundColor = ConsoleColor.White;
             Console.SetCursorPosition(posiciónObjetivo.X + 1, posiciónObjetivo.Y + 1);
             Console.Write(" ");
 

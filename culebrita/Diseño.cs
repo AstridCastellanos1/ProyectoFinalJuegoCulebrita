@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
 using System.Media;
 
@@ -32,6 +29,7 @@ namespace culebrita
             }
         }
 
+
         internal static void MuestraPunteo(int punteo)
         {
             Console.BackgroundColor = ConsoleColor.White;
@@ -42,24 +40,24 @@ namespace culebrita
 
         internal static void Sonidos(String sonido)
         {
-            using(var sp = new SoundPlayer(sonido))
+            using (var sp = new SoundPlayer(sonido))
             {
                 sp.Play();
             }
         }
 
-        
 
-        internal static Point MostrarComida(Size screenSize, Queue<Point> culebra)//************************************************
+
+        internal static Point MostrarComida(Size screenSize, ColaLineal culebra1)
         {
             var lugarComida = Point.Empty;
-            var cabezaCulebra = culebra.Last();
+            var cabezaCulebra = (Point)culebra1.ultimo();
             var rnd = new Random();
             do
             {
                 var x = rnd.Next(0, screenSize.Width - 1);
                 var y = rnd.Next(0, screenSize.Height - 1);
-                if (culebra.All(p => p.X != x || p.Y != y)
+                if (culebra1.ToString().All(p => cabezaCulebra.X != x || cabezaCulebra.Y != y)
                     && Math.Abs(x - cabezaCulebra.X) + Math.Abs(y - cabezaCulebra.Y) > 8)
                 {
                     lugarComida = new Point(x, y);
@@ -67,11 +65,12 @@ namespace culebrita
 
             } while (lugarComida == Point.Empty);
 
-            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.BackgroundColor = ConsoleColor.Red;
             Console.SetCursorPosition(lugarComida.X + 1, lugarComida.Y + 1);
             Console.Write(" ");
 
             return lugarComida;
         }
+
     }
 }

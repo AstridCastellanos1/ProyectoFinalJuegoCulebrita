@@ -60,13 +60,14 @@ namespace culebrita
             return siguienteDireccion;
         }
 
-        internal static bool MoverLaCulebrita(Queue<Point> culebra, Point posiciónObjetivo, int longitudCulebra, Size screenSize)//***************************
+
+        internal static bool MoverLaCulebrita(ColaLineal culebra1, Point posiciónObjetivo, int longitudCulebra, Size screenSize)
         {
-            var lastPoint = culebra.Last();
+            var lastPoint = (Point)culebra1.ultimo();
 
             if (lastPoint.Equals(posiciónObjetivo)) return true;
 
-            if (culebra.Any(x => x.Equals(posiciónObjetivo))) return false;
+            if (culebra1.ToString().Any(x => x.Equals(posiciónObjetivo))) return false;
 
             if (posiciónObjetivo.X < 0 || posiciónObjetivo.X >= screenSize.Width
                     || posiciónObjetivo.Y < 0 || posiciónObjetivo.Y >= screenSize.Height)
@@ -78,16 +79,16 @@ namespace culebrita
             Console.SetCursorPosition(lastPoint.X + 1, lastPoint.Y + 1);
             Console.WriteLine(" ");
 
-            culebra.Enqueue(posiciónObjetivo);
+            culebra1.insetar(posiciónObjetivo);
 
-            Console.BackgroundColor = ConsoleColor.Red;
+            Console.BackgroundColor = ConsoleColor.White;
             Console.SetCursorPosition(posiciónObjetivo.X + 1, posiciónObjetivo.Y + 1);
             Console.Write(" ");
 
             // Quitar cola
-            if (culebra.Count > longitudCulebra)
+            if (culebra1.count() > longitudCulebra)
             {
-                var removePoint = culebra.Dequeue();
+                var removePoint = (Point)culebra1.quitar();
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.SetCursorPosition(removePoint.X + 1, removePoint.Y + 1);
                 Console.Write(" ");

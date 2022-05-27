@@ -50,7 +50,7 @@ namespace culebrita
 
         
 
-        internal static Point MostrarComida(Size screenSize, Queue<Point> culebra)//************************************************
+        internal static Point MostrarComida(Size screenSize, Queue<Point> culebra)
         {
             var lugarComida = Point.Empty;
             var cabezaCulebra = culebra.Last();

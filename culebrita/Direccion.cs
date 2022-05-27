@@ -60,7 +60,7 @@ namespace culebrita
             return siguienteDireccion;
         }
 
-        internal static bool MoverLaCulebrita(Queue<Point> culebra, Point posiciónObjetivo, int longitudCulebra, Size screenSize)//***************************
+        internal static bool MoverLaCulebrita(Queue<Point> culebra, Point posiciónObjetivo, int longitudCulebra, Size screenSize)
         {
             var lastPoint = culebra.Last();
 
